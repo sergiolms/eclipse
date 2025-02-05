@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #0a0f1f, #1a1f30);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  background: linear-gradient(to right, #ffd700, #ffa500);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.game-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  padding: 2rem;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+/* Nubes */
+.clouds {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.cloud {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1000px;
+  animation: moveClouds 60s linear infinite;
+}
+
+.cloud::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: inherit;
+  border-radius: inherit;
+  top: -20%;
+  left: 10%;
+}
+
+.cloud::after {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  background: inherit;
+  border-radius: inherit;
+  top: -10%;
+  right: 10%;
+}
+
+@keyframes moveClouds {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+button {
+  background: linear-gradient(to right, #ff8a00, #e52e71);
+  border: none;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  font-size: 0.8rem;
+  padding: 0.75rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+footer a {
+  color: #ff8a00;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: #e52e71;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+} 

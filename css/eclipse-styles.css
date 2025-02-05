@@ -1,0 +1,164 @@
+:host {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 60px);
+  grid-template-rows: repeat(6, 60px);
+  position: relative;
+  border: 2px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.cell.fixed {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.cell-content {
+  font-size: 28px;
+  user-select: none;
+}
+
+.clue {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  border-radius: 3px;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  cursor: default;
+}
+
+.cell:nth-child(6n) {
+  border-right: none;
+}
+
+.cell:nth-last-child(-n+6) {
+  border-bottom: none;
+}
+
+.cell:hover {
+  background-color: #e8e8e8;
+}
+
+.cell[data-type="sun"] {
+  background-color: #fff3e0;
+}
+
+.cell[data-type="moon"] {
+  background-color: #e0f7fa;
+} 
+
+.show-solution {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.show-solution:hover {
+  background-color: #45a049;
+}
+
+.solution-grid {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.solution-grid .grid {
+  opacity: 0.7;
+}
+
+.solution-grid .cell {
+  background-color: #f0f0f0;
+  pointer-events: none;
+}
+
+.cell.invalid {
+  background-color: #ffebee;
+  border: 1px solid #c62828;
+}
+
+.cell.invalid .cell-content {
+  color: #c62828;
+}
+
+.win-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.win-message h2 {
+  margin: 0;
+  color: #4CAF50;
+  font-size: 2.5rem;
+}
+
+.win-message p {
+  margin: 1rem 0 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.confetti-container {
+  position: fixed;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  animation: confetti-fall 5s ease-in infinite;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+  }
+}
