@@ -1,6 +1,6 @@
 # 🌞 Eclipse Game 🌚
 
-Welcome to **Eclipse Game**! This is a logic puzzle inspired by the LinkedIn game: [Tango](https://www.linkedin.com/games/tango). The game combines strategy, logic, and a touch of creativity to solve each level.
+Welcome to **Eclipse Game**! This is a logic puzzle inspired by the LinkedIn game: [Tango](https://www.linkedin.com/games/tango). The game combines strategy, logic, and a touch of creativity to solve each level.  
 
 #### [🎮 Play the game here!](https://sergiolms.github.io/eclipse/)
 
